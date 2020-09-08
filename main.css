@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    padding: 0;
+    /* cursor: none; */
+}
+
+#img-container {
+    width: 100vw;
+    max-width: 100%;
+    height: 100vh;
+    background-image: url('img/gandalf.gif');
+    background-position: center;
+    background-size: cover;
+}

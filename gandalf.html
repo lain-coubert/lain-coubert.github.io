@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Gandalf</title>
+
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div id="img-container"></div>
+
+    <script>
+      let moveBy = 10,
+        x = moveBy,
+        y = moveBy;
+
+      const animate = () => {
+        window.moveBy(x, y);
+        if (window.screenX + window.outerWidth === screen.width) {
+          x = -moveBy;
+        } else if (window.screenX === 0) {
+          x = moveBy;
+        }
+        if (window.screenY + window.outerHeight + 40 === screen.height) {
+          y = -moveBy;
+        } else if (window.screenY === 0) {
+          y = moveBy;
+        }
+        requestAnimationFrame(animate);
+      };
+
+      const moveWindowTo = () => {
+        window.moveTo(
+          Math.floor(Math.random() * 1200 + 200),
+          Math.floor(Math.random() * 900 + 200)
+        );
+      };
+
+      animate();
+      document.addEventListener("load", moveWindowTo());
+    </script>
+  </body>
+</html>
